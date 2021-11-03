@@ -32,15 +32,15 @@ namespace SnippetStuff
             watch2.Stop();
 
             Console.WriteLine("-------------------------------");
-            Console.WriteLine($"1 ({myThings1.Count}): {watch1.ElapsedTicks}");
-            Console.WriteLine($"2 ({myThings2.Count}): {watch2.ElapsedTicks}");
+            Console.WriteLine($"1 ({myThings1.Count}): {watch1.ElapsedMilliseconds}");
+            Console.WriteLine($"2 ({myThings2.Count}): {watch2.ElapsedMilliseconds}");
 
             File.AppendAllText("test.csv", $"{myThings1.Count},{watch1.ElapsedMilliseconds},{watch2.ElapsedMilliseconds}\r");
         }
 
         private static MyThing CreateSomething(int i)
         {
-            return new MyThing(i);
+            return i > 50 ? new MyThing(i + 100) : new MyThing(i);
         }
     }
 
