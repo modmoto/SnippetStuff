@@ -35,7 +35,7 @@ namespace SnippetStuff
             Console.WriteLine($"1 ({myThings1.Count}): {watch1.ElapsedMilliseconds}");
             Console.WriteLine($"2 ({myThings2.Count}): {watch2.ElapsedMilliseconds}");
 
-            File.AppendAllText("test.csv", $"{myThings1.Count},{watch1.ElapsedMilliseconds},{watch2.ElapsedMilliseconds}\r");
+            File.AppendAllText("test.csv", $"{myThings1.Count},{watch1.ElapsedMilliseconds},{watch2.ElapsedMilliseconds},{watch1.ElapsedTicks},{watch2.ElapsedTicks}\r");
         }
 
         private static MyThing CreateSomething(int i)
